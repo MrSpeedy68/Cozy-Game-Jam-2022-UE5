@@ -132,3 +132,8 @@ void AFallGameJam2022Character::SetInventory(FInventory Items)
 {
 	Inventory = Items;
 }
+
+void AFallGameJam2022Character::OnShoot()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Hello %d"), 100);
+}

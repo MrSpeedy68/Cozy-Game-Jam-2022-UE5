@@ -38,6 +38,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
 
+	UFUNCTION(BlueprintCallable)
+	void OnShoot();
+
 protected:
 
 	/** Called for forwards/backward input */
