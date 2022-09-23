@@ -139,5 +139,10 @@ void AFallGameJam2022Character::OnShoot()
 	auto end = start + GetActorForwardVector() * 100; 
 	DrawDebugLine(GetWorld(), start, end, FColor::Red);
 
-	GetWorld()->SpawnActor<AActor>(projecticle, end, GetActorRotation());
+	GetWorld()->SpawnActor<AActor>(Projecticle, Gun->GetTransform().GetLocation(), GetActorRotation());
+}
+
+void AFallGameJam2022Character::SetGun(AActor* Value)
+{
+	Gun = Value;	
 }
