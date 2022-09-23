@@ -26,12 +26,9 @@ public:
 
 private:
 	UPROPERTY(VisibleAnywhere)
-	USceneComponent* Root;
-
-	UPROPERTY(VisibleAnywhere)
 	UStaticMesh* Mesh;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere)
 	USphereComponent* Collision;
 
 	
