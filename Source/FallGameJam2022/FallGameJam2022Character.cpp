@@ -135,5 +135,9 @@ void AFallGameJam2022Character::SetInventory(FInventory Items)
 
 void AFallGameJam2022Character::OnShoot()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Hello %d"), 100);
+	auto start = GetTransform().GetLocation();
+	auto end = start + GetActorForwardVector() * 100; 
+	DrawDebugLine(GetWorld(), start, end, FColor::Red);
+
+	GetWorld()->SpawnActor<AActor>(projecticle, end, GetActorRotation());
 }

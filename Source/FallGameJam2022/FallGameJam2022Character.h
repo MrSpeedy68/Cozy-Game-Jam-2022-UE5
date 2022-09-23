@@ -38,6 +38,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<AActor> projecticle;
+
 	UFUNCTION(BlueprintCallable)
 	void OnShoot();
 
