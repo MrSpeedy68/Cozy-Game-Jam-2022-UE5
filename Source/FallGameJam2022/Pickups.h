@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "Pickups.generated.h"
 
@@ -23,4 +24,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+private:
+	UPROPERTY(VisibleAnywhere)
+	USceneComponent* Root;
+
+	UPROPERTY(VisibleAnywhere)
+	UStaticMesh* Mesh;
+
+	UPROPERTY(VisibleAnywhere)
+	USphereComponent* Collision;
+
+	
 };

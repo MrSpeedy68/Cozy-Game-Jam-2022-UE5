@@ -6,6 +6,19 @@
 #include "GameFramework/Character.h"
 #include "FallGameJam2022Character.generated.h"
 
+
+USTRUCT(BlueprintType)
+struct FInventory
+{
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadWrite)
+	int items;
+	UPROPERTY(BlueprintReadWrite)
+	int money;
+};
+
+
 UCLASS(config=Game)
 class AFallGameJam2022Character : public ACharacter
 {
@@ -61,5 +74,14 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FInventory GetInventory() { return Inventory; }
+
+	UFUNCTION(BlueprintCallable)
+	void SetInventory(FInventory Items);
+	
+	UPROPERTY(BlueprintReadWrite, BlueprintGetter=GetInventory, BlueprintSetter=SetInventory, Category="PlayerController")
+	FInventory Inventory;
 };
 

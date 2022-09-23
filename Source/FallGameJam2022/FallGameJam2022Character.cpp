@@ -127,3 +127,8 @@ void AFallGameJam2022Character::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
+void AFallGameJam2022Character::SetInventory(FInventory Items)
+{
+	Inventory = Items;
+}
