@@ -67,21 +67,6 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
 
-	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<AActor> Projecticle;
-
-	UPROPERTY(EditAnywhere, BlueprintGetter=GetGun, BlueprintSetter=SetGun)
-	AActor *Gun;
-	
-	UFUNCTION(BlueprintCallable, BlueprintPure)
-	AActor *GetGun() {return Gun;}
-	
-	UFUNCTION(BlueprintCallable)
-	void SetGun(AActor *Value);
-
-	UFUNCTION(BlueprintCallable)
-	void OnShoot();
-
 protected:
 
 	/** Called for forwards/backward input */

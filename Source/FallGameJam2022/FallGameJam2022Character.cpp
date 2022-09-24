@@ -138,23 +138,6 @@ void AFallGameJam2022Character::SetPlayerStats(FPlayerStats Items)
 	PlayerStats = Items;
 }
 
-
-void AFallGameJam2022Character::OnShoot()
-{
-	auto start = GetTransform().GetLocation();
-	auto end = start + GetActorForwardVector() * 100; 
-	DrawDebugLine(GetWorld(), start, end, FColor::Red);
-
-	if (Gun == nullptr) return;
-	
-	GetWorld()->SpawnActor<AActor>(Projecticle, Gun->GetTransform().GetLocation(), GetActorRotation());
-}
-
-void AFallGameJam2022Character::SetGun(AActor* Value)
-{
-	Gun = Value;	
-}
-
 void AFallGameJam2022Character::SetJumpLevel(int Value)
 {
 	PlayerStats.JumpLevel = Value;
