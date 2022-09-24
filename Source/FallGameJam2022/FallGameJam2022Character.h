@@ -13,7 +13,7 @@ struct FInventory
 	GENERATED_BODY()
 
 	UPROPERTY(BlueprintReadWrite)
-	int Pumpkins;
+	int Pumpkins {50};
 };
 
 USTRUCT(BlueprintType)
