@@ -17,6 +17,18 @@ struct FInventory
 };
 
 USTRUCT(BlueprintType)
+struct FPlayerAttributes
+{
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadWrite)
+	float Health {1.0};
+
+	UPROPERTY(BlueprintReadWrite)
+	float Energy {1.0};
+};
+
+USTRUCT(BlueprintType)
 struct FPlayerStats
 {
 	GENERATED_BODY()
@@ -115,73 +127,26 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetPlayerStats(FPlayerStats Items);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FPlayerAttributes GetPlayerAttributes() { return PlayerAttributes; }
+
+	UFUNCTION(BlueprintCallable)
+	void SetPlayerAttributes(FPlayerAttributes Items);
 	
 	UPROPERTY(BlueprintReadWrite, BlueprintGetter=GetInventory, BlueprintSetter=SetInventory, Category="PlayerController")
 	FInventory Inventory;
 
 	UPROPERTY(BlueprintReadWrite, BlueprintGetter=GetPlayerStats, BlueprintSetter=SetPlayerStats, Category="PlayerController")
 	FPlayerStats PlayerStats;
+	
+	UPROPERTY(BlueprintReadWrite, BlueprintGetter=GetPlayerAttributes, BlueprintSetter=SetPlayerAttributes, Category="PlayerController")
+	FPlayerAttributes PlayerAttributes;
 
-	//Getters
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetJumpLevel() {return PlayerStats.JumpLevel; }
+	UFUNCTION(BlueprintCallable)
+	void SetEnergy(float Value) { PlayerAttributes.Energy = Value; }
 
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetJumpCost() {return PlayerStats.JumpCost; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetWalkSpeedLevel() {return PlayerStats.WalkSpeedLevel; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetWalkSpeedCost() {return PlayerStats.WalkSpeedCost; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetBlastRadiusLevel() {return PlayerStats.BlastRadiusLevel; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetBlastRadiusCost() {return PlayerStats.BlastRadiusCost; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetShootingSpeedLevel() {return PlayerStats.ShootingSpeedLevel; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetShootingSpeedCost() {return PlayerStats.ShootingSpeedCost; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetDamageLevel() {return PlayerStats.DamageLevel; }
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category="PlayerStats")
-	int GetDamageCost() {return PlayerStats.DamageCost; }
-
-	//Setters
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetJumpLevel(int Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetJumpCost(float Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetWalkSpeedLevel(int Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetWalkSpeedCost(float Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetBlastRadiusLevel(int Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetBlastRadiusCost(float Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetShootingSpeedLevel(int Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetShootingSpeedCost(float Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetDamageLevel(int Value);
-
-	UFUNCTION(BlueprintCallable, Category="PlayerStats")
-	void SetDamageCost(float Value);
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	float GetEnergy() { return PlayerAttributes.Energy; }
 };
 

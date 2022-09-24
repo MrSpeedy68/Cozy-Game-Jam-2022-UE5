@@ -138,52 +138,7 @@ void AFallGameJam2022Character::SetPlayerStats(FPlayerStats Items)
 	PlayerStats = Items;
 }
 
-void AFallGameJam2022Character::SetJumpLevel(int Value)
+void AFallGameJam2022Character::SetPlayerAttributes(FPlayerAttributes Items)
 {
-	PlayerStats.JumpLevel = Value;
-}
-
-void AFallGameJam2022Character::SetJumpCost(float Value)
-{
-	PlayerStats.JumpCost = Value;
-}
-
-void AFallGameJam2022Character::SetWalkSpeedLevel(int Value)
-{
-	PlayerStats.WalkSpeedLevel = Value;
-}
-
-void AFallGameJam2022Character::SetWalkSpeedCost(float Value)
-{
-	PlayerStats.WalkSpeedCost = Value;
-}
-
-void AFallGameJam2022Character::SetBlastRadiusLevel(int Value)
-{
-	PlayerStats.BlastRadiusLevel = Value;
-}
-
-void AFallGameJam2022Character::SetBlastRadiusCost(float Value)
-{
-	PlayerStats.BlastRadiusCost = Value;
-}
-
-void AFallGameJam2022Character::SetShootingSpeedLevel(int Value)
-{
-	PlayerStats.ShootingSpeedLevel = Value;
-}
-
-void AFallGameJam2022Character::SetShootingSpeedCost(float Value)
-{
-	PlayerStats.ShootingSpeedCost = Value;
-}
-
-void AFallGameJam2022Character::SetDamageLevel(int Value)
-{
-	PlayerStats.DamageLevel = Value;
-}
-
-void AFallGameJam2022Character::SetDamageCost(float Value)
-{
-	PlayerStats.DamageCost = Value;
+	PlayerAttributes = Items;
 }
