@@ -148,5 +148,11 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	float GetEnergy() { return PlayerAttributes.Energy; }
+
+	UFUNCTION(BlueprintCallable)
+	void SetHealth(float Value) { PlayerAttributes.Health = Value; }
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	float GetHealth() { return PlayerAttributes.Health; }
 };
 
