@@ -56,6 +56,9 @@ AFallGameJam2022Character::AFallGameJam2022Character()
 
 void AFallGameJam2022Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
+	GetCharacterMovement()->JumpZVelocity = 700.f * PlayerStats.JumpLevel;
+
+	
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
